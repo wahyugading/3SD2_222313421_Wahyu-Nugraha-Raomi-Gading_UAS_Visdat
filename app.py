@@ -1349,9 +1349,6 @@ else:
         color="Kelompok Pulau",
         category_orders={"Kelompok Pulau": PULAU_ORDER},
         color_discrete_sequence=OKABE_ITO[:7],
-        trendline="ols",
-        trendline_scope="overall",
-        trendline_color_override=ols_color,
         custom_data=["Kabupaten/Kota", "Provinsi", "Penduduk", "Protein"],
         labels={
             "Rokok": "Pengeluaran Rokok (Rp per kapita per minggu)",
@@ -1367,11 +1364,6 @@ else:
                       "Belanja Daging + Ikan: Rp %{customdata[3]:,.0f}/minggu<br>"
                       + ylabel + ": %{y:,.2f}<br>"
                       "Populasi: %{customdata[2]:,.0f} jiwa<extra></extra>",
-    )
-    fig2.update_traces(
-        selector=dict(mode="lines"),
-        name="Regresi Linear (OLS)",
-        line=dict(width=2.8, dash="dash", color=ols_color),
     )
     fig2.update_xaxes(
         title_text="Pengeluaran Rokok (Rp per kapita per minggu)",
