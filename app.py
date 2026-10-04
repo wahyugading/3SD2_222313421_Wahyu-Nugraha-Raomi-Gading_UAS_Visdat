@@ -25,7 +25,7 @@ import streamlit as st
 # 0. KONFIGURASI HALAMAN & CSS
 # ----------------------------------------------------------------------------
 st.set_page_config(
-    page_title="Ironi Konsumsi: Rokok vs Kebutuhan Gizi | The Editorial Ledger",
+    page_title="Rokok-vs-Gizi-Susenas",
     page_icon="🚬",
     layout="wide",
     initial_sidebar_state="collapsed",
