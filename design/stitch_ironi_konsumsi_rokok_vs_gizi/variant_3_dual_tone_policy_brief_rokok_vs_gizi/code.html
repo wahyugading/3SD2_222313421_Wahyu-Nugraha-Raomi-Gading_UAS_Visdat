@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&amp;family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}details summary::-webkit-details-marker {display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        navy: {
+          950: "#020C1B",
+          900: "#0A192F",
+          800: "#112240",
+          700: "#233554",
+        },
+        accent: {
+          vermilion: "#D9381E",
+          amber: "#E69F00",
+          teal: "#64FFDA",
+          blue: "#0072B2"
+        },
+        slate: {
+          neutral: "#F8F9FA",
+          border: "#E2E8F0",
+          muted: "#6C757D"
+        }
+      },
+      fontFamily: {
+        serif: ["Playfair Display", "serif"],
+        sans: ["Nunito Sans", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"]
+      }
+    }
+  }
+};</script></head><body class="bg-[#F8F9FA] text-[#0d1c2e] font-sans antialiased selection:bg-[#64FFDA] selection:text-[#020C1B]">
+<!-- Sticky Minimal Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#020C1B]/95 backdrop-blur-md border-b border-navy-800 text-slate-100 transition-all">
+<div class="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-mono text-xs uppercase tracking-widest text-[#64FFDA] font-semibold flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-[#64FFDA] animate-pulse"></span>
+        POLICY BRIEF &amp; DATA INVESTIGATION
+      </span>
+<span class="hidden sm:inline-block text-navy-700">/</span>
+<span class="hidden sm:inline-block font-sans text-xs text-slate-300 font-medium">BPS SUSENAS MICRODATA</span>
+</div>
+<nav class="hidden md:flex items-center space-x-1 font-mono text-xs">
+<a class="px-3 py-1.5 rounded hover:text-[#64FFDA] text-slate-300 hover:bg-navy-900 transition-colors" href="#bab-01">01. Anatomi Belanja</a>
+<a class="px-3 py-1.5 rounded hover:text-[#64FFDA] text-slate-300 hover:bg-navy-900 transition-colors" href="#bab-02">02. Paradoks Regresi</a>
+<a class="px-3 py-1.5 rounded hover:text-[#64FFDA] text-slate-300 hover:bg-navy-900 transition-colors" href="#bab-03">03. Rasio Geospasial</a>
+<a class="px-3 py-1.5 rounded text-[#64FFDA] border border-[#64FFDA]/30 hover:bg-[#64FFDA]/10 transition-colors ml-2" href="#appendix-repository">Data &amp; Kamus</a>
+</nav>
+<div class="flex items-center gap-2 font-mono text-xs text-slate-400">
+<span class="hidden lg:inline">STIS-VISDAT 2025/2026</span>
+<button class="p-1.5 text-slate-300 hover:text-[#64FFDA] hover:bg-navy-800 rounded transition-colors" onclick="navigator.clipboard?.writeText(window.location.href); alert('Tautan laporan disalin ke clipboard');" title="Bagikan">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full pt-16">
+<!-- IMMERSIVE DUAL-TONE HERO SECTION (Deep Teal-Navy / Dark Slate) -->
+<section class="relative w-full bg-[#0A192F] text-white pt-14 pb-20 md:py-24 border-b border-navy-800 overflow-hidden">
+<!-- Subtle Architectural Background Grid -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(#64FFDA 1px, transparent 1px), linear-gradient(90deg, #64FFDA 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="absolute -right-40 -top-40 w-96 h-96 bg-[#64FFDA]/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
+<!-- Attribution Tags & Badges -->
+<div class="flex flex-wrap items-center gap-2 md:gap-3 mb-8">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#64FFDA]/15 text-[#64FFDA] border border-[#64FFDA]/30 font-mono text-xs font-semibold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">school</span>
+          POLITEKNIK STATISTIKA STIS &amp; BPS MICRODATA
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-navy-800/80 text-slate-300 border border-slate-700 font-mono text-xs">
+<span class="material-symbols-outlined text-[13px] text-accent-amber">verified</span>
+          Edisi Analisis Kebijakan Fiskal &amp; Gizi
+        </span>
+<span class="text-slate-400 font-mono text-xs hidden sm:inline">Susenas 2018–2024 (511 Kab/Kota)</span>
+</div>
+<!-- Massive Serif Display Headline -->
+<div class="max-w-5xl mb-8">
+<h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] text-slate-50 mb-6">
+          Ironi Konsumsi Masyarakat: Zat Adiktif vs Kebutuhan Gizi
+        </h1>
+<p class="font-sans text-lg sm:text-xl text-slate-300 leading-relaxed font-light max-w-4xl">
+          Sebuah kajian investigatif berbasis data mikro agregasi rumah tangga mengenai pergeseran alokasi belanja esensial, perangkap subsidi tembakau, serta ancaman laten terhadap penanganan stunting di 511 kabupaten/kota Indonesia.
+        </p>
+</div>
+<!-- Author Attribution Tag Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4 py-3 px-4 rounded-lg bg-navy-900/90 border border-navy-700/80 mb-10 text-xs text-slate-300 font-mono">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded bg-[#64FFDA]/20 text-[#64FFDA] flex items-center justify-center font-bold">STIS</span>
+<span>Kajian Analisis Jurnalisme Data Komputasional</span>
+</div>
+<span class="hidden sm:inline text-navy-700">•</span>
+<span class="text-slate-400">Basis Data: Susenas BPS (Maret 2018 - Maret 2024)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-slate-400">Estimasi Baca: 10 Menit</span>
+<a class="text-[#64FFDA] hover:underline flex items-center gap-1 font-semibold" href="#appendix-repository">
+<span>Repositori Terbuka</span>
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+</a>
+</div>
+</div>
+<!-- Executive Summary Callout Box with Key Findings -->
+<div class="bg-[#020C1B]/95 rounded-xl border border-navy-700/80 p-6 md:p-8 shadow-2xl relative">
+<div class="flex items-center justify-between border-b border-navy-800 pb-3 mb-6">
+<div class="flex items-center gap-2 text-[#64FFDA] font-mono text-xs uppercase tracking-widest font-bold">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+            EXECUTIVE POLICY BRIEF &amp; TEMUAN UTAMA
+          </div>
+<span class="text-[11px] font-mono text-slate-400">Ringkasan Eksekutif Hasil Audit</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Metric 1 -->
+<div class="border-l-2 border-[#D9381E] pl-4">
+<div class="font-mono text-xs text-slate-400 uppercase tracking-wider mb-1">Pangsa Belanja Rokok</div>
+<div class="font-serif text-3xl sm:text-4xl font-bold text-slate-100">12.4%</div>
+<div class="font-sans text-xs text-slate-300 mt-2 leading-snug">
+              Nomor dua terbesar di keranjang makanan setelah beras; melampaui gabungan belanja telur &amp; daging.
+            </div>
+</div>
+<!-- Metric 2 -->
+<div class="border-l-2 border-accent-amber pl-4">
+<div class="font-mono text-xs text-slate-400 uppercase tracking-wider mb-1">Rasio Rokok : Protein</div>
+<div class="font-serif text-3xl sm:text-4xl font-bold text-accent-amber">1.38×</div>
+<div class="font-sans text-xs text-slate-300 mt-2 leading-snug">
+              Rata-rata nasional menunjukkan defisit kritis, di mana belanja asap tembakau 38% lebih tinggi dari daging &amp; ikan.
+            </div>
+</div>
+<!-- Metric 3 -->
+<div class="border-l-2 border-[#64FFDA] pl-4">
+<div class="font-mono text-xs text-slate-400 uppercase tracking-wider mb-1">Wilayah Anomali Kritis</div>
+<div class="font-serif text-3xl sm:text-4xl font-bold text-slate-100">387 <span class="text-lg font-mono text-slate-400">/ 511</span></div>
+<div class="font-sans text-xs text-slate-300 mt-2 leading-snug">
+<strong class="text-[#64FFDA]">75.7%</strong> kabupaten/kota memiliki rasio konsumsi &gt; 1.0 (zona darurat nutrisi keluarga).
+            </div>
+</div>
+<!-- Metric 4 -->
+<div class="border-l-2 border-accent-blue pl-4">
+<div class="font-mono text-xs text-slate-400 uppercase tracking-wider mb-1">Beban Desil Termiskin</div>
+<div class="font-serif text-3xl sm:text-4xl font-bold text-slate-100">Rp 168.5k</div>
+<div class="font-sans text-xs text-slate-300 mt-2 leading-snug">
+              Alokasi per kapita/bulan di rumah tangga pra-sejahtera, setara dengan hilangnya <strong class="text-slate-100">3.2 kg</strong> telur ayam nutrisi anak.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BAB 01: ANATOMI KERANJANG BELANJA (Tone 1: Clean White #FFFFFF) -->
+<section class="w-full py-16 md:py-24 bg-white border-b border-slate-border" id="bab-01">
+<div class="max-w-6xl mx-auto px-4 md:px-8">
+<!-- Chapter Marker & Section Header -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-12">
+<div class="lg:col-span-4">
+<div class="lg:sticky lg:top-24 space-y-3">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-slate-100 text-[#0d1c2e] font-mono text-xs font-bold tracking-widest border border-slate-200">
+              BAB 01
+            </div>
+<h2 class="font-serif text-2xl md:text-3xl font-bold text-[#0d1c2e] leading-snug">
+              Anatomi Keranjang Belanja: Di Mana Posisi Zat Adiktif?
+            </h2>
+<div class="w-12 h-1 bg-[#D9381E] rounded-full"></div>
+<p class="font-sans text-xs text-slate-muted pt-2 leading-relaxed">
+              Mikrodata Susenas Badan Pusat Statistik (2018–2024). Agregasi 315.000 rumah tangga representatif pada tingkat kabupaten/kota di seluruh Indonesia.
+            </p>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-4 font-sans text-[#0d1c2e] leading-relaxed text-base md:text-lg">
+<p class="text-xl md:text-2xl font-serif text-[#0d1c2e] leading-snug first-letter:text-5xl first-letter:font-bold first-letter:font-serif first-letter:mr-2.5 first-letter:float-left first-letter:text-[#D9381E]">
+            Setiap rupiah dalam pos pengeluaran rumah tangga di Indonesia mencerminkan tarik-menarik antara pemenuhan kelangsungan biologis generasi mendatang dan jeratan zat adiktif. Berdasarkan mikrodata Susenas yang dikaji, tembakau secara persisten menjadi komoditas kedua terbesar setelah beras di hampir semua strata ekonomi.
+          </p>
+<p class="text-slate-600 text-base">
+            Di ratusan distrik agraris dan pesisir, belanja rokok linting dan kretek filter secara konsisten melampaui seluruh alokasi konsumsi sumber hewani seperti telur ayam, ikan tongkol, dan daging unggas. Fenomena <em>crowding-out effect</em> ini mengonfirmasi bahwa saat daya beli tertekan inflasi pangan, kebutuhan mikronutrien anak yang justru pertama kali dikorbankan demi menjaga asupan lintingan tembakau.
+          </p>
+</div>
+</div>
+<!-- Treemap Interactive Graphic Component -->
+<div class="bg-slate-50 border border-slate-border rounded-xl p-5 md:p-7 shadow-sm">
+<!-- Filter Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-5 border-b border-slate-border">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-mono text-xs uppercase font-bold text-slate-500">Tahun Dataset:</span>
+<div class="inline-flex rounded-lg bg-white p-1 border border-slate-200 shadow-xs font-mono text-xs">
+<button class="treemap-btn px-3 py-1 font-bold rounded bg-[#0A192F] text-white transition-all" data-year="2024">2024 (Mutakhir)</button>
+<button class="treemap-btn px-3 py-1 text-slate-600 hover:text-black rounded transition-all" data-year="2021">2021 (Pandemi)</button>
+<button class="treemap-btn px-3 py-1 text-slate-600 hover:text-black rounded transition-all" data-year="2018">2018 (Baseline)</button>
+</div>
+</div>
+<div class="flex items-center gap-2 font-mono text-xs text-slate-600">
+<span class="inline-block w-3 h-3 rounded-full bg-[#D9381E]"></span>
+<span>Porsi Zat Adiktif: <strong class="text-black">27.6% dari Subkelompok Pangan Jadi</strong></span>
+</div>
+</div>
+<!-- Simulated Treemap Proportional Blocks -->
+<div class="w-full bg-slate-200/70 p-2 rounded-lg min-h-[440px] flex flex-col md:flex-row gap-2 font-sans">
+<!-- Column 1: Tembakau & Rokok (Highlight Focus) -->
+<div class="md:w-5/12 bg-[#D9381E] text-white p-5 rounded-lg flex flex-col justify-between shadow-inner relative group transition-all">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-mono text-[11px] font-bold uppercase tracking-wider bg-black/25 px-2 py-0.5 rounded">Kelompok 01</span>
+<span class="font-mono text-xs font-bold text-red-100">35.8% Alokasi Makanan Jadi</span>
+</div>
+<h3 class="font-serif text-2xl font-bold mb-1">Tembakau &amp; Rokok</h3>
+<p class="font-mono text-sm text-red-100">Rp 105.000 / kapita / bulan</p>
+</div>
+<!-- Granular Breakdown -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 my-4 p-3 bg-black/20 rounded-md">
+<div class="bg-black/20 p-2.5 rounded">
+<div class="font-mono text-[11px] text-red-200">Kretek Filter (SKM)</div>
+<div class="font-serif text-lg font-bold">Rp 65.000</div>
+<div class="font-mono text-[10px] text-red-200/80">61.9% dari total tembakau</div>
+</div>
+<div class="bg-black/20 p-2.5 rounded">
+<div class="font-mono text-[11px] text-red-200">Rokok Putih (SPM)</div>
+<div class="font-serif text-lg font-bold">Rp 25.000</div>
+<div class="font-mono text-[10px] text-red-200/80">23.8% dari total tembakau</div>
+</div>
+<div class="sm:col-span-2 bg-black/20 px-2.5 py-1.5 rounded flex justify-between items-center text-xs font-mono">
+<span class="text-red-200">Kretek Tangan &amp; Tingwe</span>
+<span class="font-bold text-white">Rp 15.000</span>
+</div>
+</div>
+<div class="text-[11px] font-sans text-red-100 flex items-center gap-1.5 border-t border-white/20 pt-2">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+              Biaya asap tembakau melampaui plafon bantuan PKH per keluarga.
+            </div>
+</div>
+<!-- Column 2: Nutrisi Esensial & Karbohidrat -->
+<div class="md:w-7/12 flex flex-col gap-2">
+<!-- Top Split -->
+<div class="h-1/2 flex flex-col sm:flex-row gap-2">
+<!-- Beras & Padi -->
+<div class="sm:w-3/5 bg-[#0072B2] text-white p-4 rounded-lg flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-mono text-[10px] uppercase font-bold bg-white/20 px-2 py-0.5 rounded">Pangan Pokok</span>
+<span class="font-mono text-xs">Rp 107.000</span>
+</div>
+<div>
+<h4 class="font-serif text-lg font-bold">Beras &amp; Gandum</h4>
+<p class="font-sans text-xs text-blue-100">Beras: Rp 85k | Mi Instan: Rp 22k</p>
+</div>
+<div class="font-mono text-[10px] text-blue-200">Dasar kalori primer rumah tangga</div>
+</div>
+<!-- Ikan & Hasil Laut -->
+<div class="sm:w-2/5 bg-[#009E73] text-white p-4 rounded-lg flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="font-mono text-[10px] uppercase font-bold bg-white/20 px-2 py-0.5 rounded">Protein Laut</span>
+<span class="font-mono text-xs">Rp 45.000</span>
+</div>
+<div>
+<h4 class="font-serif text-lg font-bold">Ikan &amp; Udang</h4>
+<p class="font-sans text-xs text-emerald-100">Hanya 42.8% dari belanja tembakau</p>
+</div>
+<div class="font-mono text-[10px] text-emerald-200">Asupan DHA/EPA perkembangan otak</div>
+</div>
+</div>
+<!-- Bottom Split (3 Columns) -->
+<div class="h-1/2 grid grid-cols-1 sm:grid-cols-3 gap-2">
+<div class="bg-[#56B4E9] text-[#0A192F] p-3.5 rounded-lg flex flex-col justify-between">
+<div class="flex justify-between font-mono text-[11px] font-bold">
+<span>Telur &amp; Susu</span>
+<span>Rp 36k</span>
+</div>
+<div>
+<div class="font-serif font-bold text-sm">Telur Ayam Ras</div>
+<div class="text-[11px] text-navy-800">Rp 28.000 / kapita</div>
+</div>
+<div class="text-[10px] font-mono text-navy-700">Kunci pencegahan stunting</div>
+</div>
+<div class="bg-[#E69F00] text-black p-3.5 rounded-lg flex flex-col justify-between">
+<div class="flex justify-between font-mono text-[11px] font-bold">
+<span>Daging</span>
+<span>Rp 31k</span>
+</div>
+<div>
+<div class="font-serif font-bold text-sm">Ayam &amp; Sapi</div>
+<div class="text-[11px] text-stone-800">Sapi hanya Rp 8k/kapita</div>
+</div>
+<div class="text-[10px] font-mono text-stone-700">Terendah di desil miskin</div>
+</div>
+<div class="bg-[#CC79A7] text-white p-3.5 rounded-lg flex flex-col justify-between">
+<div class="flex justify-between font-mono text-[11px]">
+<span class="font-bold">Sayur &amp; Nabati</span>
+<span>Rp 42k</span>
+</div>
+<div>
+<div class="font-serif font-bold text-sm">Sayur &amp; Tahu-Tempe</div>
+<div class="text-[11px] text-purple-100">Sumber serat &amp; protein nabati</div>
+</div>
+<div class="text-[10px] font-mono text-purple-200">Pangsa stabil di semua desil</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-border flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-slate-muted gap-2 font-mono">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-[#0A192F]">info</span>
+<span>Palet Universal Okabe-Ito (Optimal untuk pembaca dengan defisiensi penglihatan warna).</span>
+</div>
+<div>Sumber: Modul Konsumsi Susenas 2018–2024, BPS RI.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BAB 02: PARADOKS KEMISKINAN & REGRESI OLS (Tone 2: Subtle Tint #F8F9FA) -->
+<section class="w-full py-16 md:py-24 bg-[#F8F9FA] border-b border-slate-border" id="bab-02">
+<div class="max-w-6xl mx-auto px-4 md:px-8">
+<!-- Section Header -->
+<div class="max-w-3xl mb-12">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-white text-[#0d1c2e] font-mono text-xs font-bold tracking-widest border border-slate-border mb-3">
+          BAB 02
+        </div>
+<h2 class="font-serif text-2xl md:text-4xl font-bold text-[#0d1c2e] leading-snug mb-3">
+          Paradoks Kemiskinan: Korelasi OLS Pengeluaran Rokok &amp; Ketidakcukupan Pangan
+        </h2>
+<p class="font-sans text-slate-600 text-base md:text-lg leading-relaxed">
+          Dalam model ekonomi standar, barang normal merespons penurunan pendapatan dengan kontraksi konsumsi. Namun pada komoditas tembakau terjadi inelastisitas ekstrem: rumah tangga di desil 1–3 termiskin justru mengalokasikan hingga 14.8% anggarannya untuk rokok, menciptakan korelasi langsung dengan lonjakan <em>Prevalence of Undernourishment</em> (PoU).
+        </p>
+</div>
+<!-- Main Interactive Scatter Plot Graphic Component -->
+<div class="bg-white border border-slate-border rounded-xl p-5 md:p-8 shadow-sm">
+<!-- Controls & Meta Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4 pb-4 mb-4 border-b border-slate-border">
+<div class="flex flex-wrap items-center gap-3 font-mono text-xs">
+<span class="text-slate-500 font-bold">Variabel:</span>
+<span class="bg-slate-100 text-navy-900 px-2 py-1 rounded border border-slate-200 font-semibold">X: Belanja Rokok/Kapita (Rp)</span>
+<span class="bg-slate-100 text-navy-900 px-2 py-1 rounded border border-slate-200 font-semibold">Y: Prevalensi PoU (%)</span>
+</div>
+<div class="flex items-center gap-4 font-mono text-xs">
+<label class="inline-flex items-center gap-2 cursor-pointer text-slate-800">
+<input checked="" class="w-4 h-4 rounded text-[#D9381E] focus:ring-0 cursor-pointer" id="trendline-toggle" type="checkbox"/>
+<span class="font-bold">Garis Regresi OLS (R² = 0.54)</span>
+</label>
+<span class="px-2 py-0.5 rounded bg-red-50 text-[#D9381E] font-bold border border-red-200">
+              p &lt; 0.0001 (Signifikan)
+            </span>
+</div>
+</div>
+<!-- SVG Scatter Plot Graphic with 511 Dots Simulation & Outliers -->
+<div class="relative w-full h-[450px] bg-slate-50/50 rounded-lg p-3 overflow-hidden select-none border border-slate-200">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 960 440">
+<!-- Grid Lines -->
+<line stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="920" y1="40" y2="40"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="920" y1="120" y2="120"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="920" y1="200" y2="200"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" x1="60" x2="920" y1="280" y2="280"></line>
+<line stroke="#6C757D" stroke-width="1.5" x1="60" x2="920" y1="360" y2="360"></line>
+<line stroke="#6C757D" stroke-width="1.5" x1="60" x2="60" y1="40" y2="360"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" x1="275" x2="275" y1="40" y2="360"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" x1="490" x2="490" y1="40" y2="360"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" x1="705" x2="705" y1="40" y2="360"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" x1="920" x2="920" y1="40" y2="360"></line>
+<!-- Axis Labels -->
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50" y="44">35% PoU</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50" y="124">25% PoU</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50" y="204">15% PoU</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50" y="284">5% PoU</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50" y="364">0%</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="60" y="382">Rp 40k</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="275" y="382">Rp 80k</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="490" y="382">Rp 120k</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="705" y="382">Rp 160k</text>
+<text fill="#6C757D" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="920" y="382">Rp 200k+</text>
+<!-- OLS Trendline -->
+<line id="ols-line" stroke="#D9381E" stroke-linecap="round" stroke-width="3.5" x1="60" x2="900" y1="330" y2="70"></line>
+<!-- Bubble Scatter (511 Districts Representation) -->
+<g fill="#0072B2" fill-opacity="0.32" stroke="#0072B2" stroke-width="1.2">
+<circle cx="110" cy="320" r="4.5"></circle>
+<circle cx="125" cy="305" r="7.0"></circle>
+<circle cx="140" cy="315" r="5.0"></circle>
+<circle cx="150" cy="290" r="6.0"></circle>
+<circle cx="170" cy="310" r="8.5"></circle>
+<circle cx="190" cy="275" r="5.5"></circle>
+<circle cx="210" cy="285" r="4.0"></circle>
+<circle cx="230" cy="265" r="6.0"></circle>
+<circle cx="245" cy="240" r="5.0"></circle>
+<circle cx="260" cy="280" r="9.0"></circle>
+<circle cx="280" cy="235" r="5.5"></circle>
+<circle cx="300" cy="250" r="7.5"></circle>
+<circle cx="315" cy="220" r="4.0"></circle>
+<circle cx="330" cy="245" r="6.5"></circle>
+<circle cx="345" cy="210" r="8.0"></circle>
+<circle cx="360" cy="225" r="5.0"></circle>
+<circle cx="375" cy="195" r="6.0"></circle>
+<circle cx="390" cy="215" r="5.5"></circle>
+<circle cx="410" cy="180" r="7.0"></circle>
+<circle cx="425" cy="230" r="4.5"></circle>
+<circle cx="440" cy="190" r="9.0"></circle>
+<circle cx="455" cy="205" r="6.0"></circle>
+<circle cx="470" cy="170" r="7.5"></circle>
+<circle cx="485" cy="185" r="5.0"></circle>
+<circle cx="500" cy="160" r="8.5"></circle>
+<circle cx="515" cy="175" r="6.5"></circle>
+<circle cx="530" cy="140" r="5.0"></circle>
+<circle cx="545" cy="190" r="4.0"></circle>
+<circle cx="560" cy="155" r="7.0"></circle>
+<circle cx="575" cy="165" r="6.0"></circle>
+<circle cx="590" cy="130" r="5.5"></circle>
+<circle cx="610" cy="145" r="8.0"></circle>
+<circle cx="625" cy="120" r="4.5"></circle>
+<circle cx="640" cy="135" r="6.0"></circle>
+<circle cx="655" cy="150" r="7.0"></circle>
+<circle cx="670" cy="115" r="5.5"></circle>
+<circle cx="690" cy="105" r="9.5"></circle>
+<circle cx="710" cy="130" r="6.0"></circle>
+<circle cx="730" cy="95" r="5.0"></circle>
+<circle cx="750" cy="110" r="8.0"></circle>
+<circle cx="770" cy="85" r="7.5"></circle>
+<circle cx="790" cy="95" r="6.5"></circle>
+<circle cx="810" cy="80" r="5.5"></circle>
+<circle cx="830" cy="90" r="7.0"></circle>
+<circle cx="850" cy="65" r="6.0"></circle>
+<circle cx="870" cy="75" r="8.5"></circle>
+</g>
+<!-- Outlier Callout Pins -->
+<!-- 1. Timor Tengah Selatan -->
+<g class="cursor-pointer group" onclick="alert('Kab. Timor Tengah Selatan (NTT):\nPoU: 32.4%\nBelanja Rokok: Rp 182.000/kapita/bln\nStunting: 37.1% (Zona Kritis Nasional)');">
+<circle class="animate-ping" cx="815" cy="62" fill="#D9381E" opacity="0.6" r="10"></circle>
+<circle cx="815" cy="62" fill="#D9381E" r="7" stroke="#ffffff" stroke-width="2"></circle>
+<line stroke="#0A192F" stroke-width="1.5" x1="815" x2="740" y1="62" y2="35"></line>
+<rect fill="#0A192F" height="24" rx="4" width="180" x="555" y="23"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="10.5" font-weight="bold" text-anchor="middle" x="645" y="39">TTS, NTT: 32.4% PoU (Kritis)</text>
+</g>
+<!-- 2. Brebes (Sentra Tani Pantura) -->
+<g class="cursor-pointer group" onclick="alert('Kab. Brebes (Jawa Tengah):\nPoU: 18.2%\nBelanja Rokok: Rp 148.000/kapita\nRasio Rokok vs Protein: 1.62x (Beban Ganda)');">
+<circle cx="680" cy="155" fill="#0072B2" r="9" stroke="#ffffff" stroke-width="2"></circle>
+<line stroke="#0A192F" stroke-width="1.5" x1="680" x2="680" y1="155" y2="210"></line>
+<rect fill="#0A192F" height="24" rx="4" width="155" x="602" y="210"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="10.5" font-weight="bold" text-anchor="middle" x="680" y="226">Brebes (1.52 Juta Jiwa)</text>
+</g>
+<!-- 3. Jakarta Timur (Perkotaan Maju) -->
+<g class="cursor-pointer group" onclick="alert('Kota Jakarta Timur:\nPoU: 4.8%\nBelanja Rokok: Rp 165.000/kapita\nStatus: Belanja rokok tinggi terkompensasi pendapatan tinggi');">
+<circle cx="720" cy="305" fill="#56B4E9" r="11" stroke="#ffffff" stroke-width="2"></circle>
+<line stroke="#0A192F" stroke-width="1.5" x1="720" x2="780" y1="305" y2="330"></line>
+<rect fill="#0A192F" height="24" rx="4" width="150" x="780" y="318"></rect>
+<text fill="#ffffff" font-family="JetBrains Mono" font-size="10.5" font-weight="bold" text-anchor="middle" x="855" y="334">Jakarta Timur (3.1M)</text>
+</g>
+</svg>
+</div>
+<!-- Annotation Summary Footer -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5 pt-4 border-t border-slate-border font-sans text-xs text-slate-600">
+<div class="flex items-start gap-2.5">
+<span class="w-3 h-3 rounded-full bg-[#D9381E] shrink-0 mt-0.5"></span>
+<div>
+<strong class="text-navy-900 block font-semibold mb-0.5">Elastisitas Negatif Protein</strong>
+              Setiap penambahan alokasi Rp 10.000 belanja rokok/kapita berasosiasi dengan kontraksi 3.4 gram konsumsi protein hewani harian.
+            </div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-3 h-3 rounded-full bg-[#0072B2] shrink-0 mt-0.5"></span>
+<div>
+<strong class="text-navy-900 block font-semibold mb-0.5">Ukuran Gelembung: Bobot Populasi</strong>
+              Mencerminkan jumlah penduduk per kabupaten/kota (rentang: 28.000 hingga 3.200.000 jiwa).
+            </div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="w-3 h-3 rounded-full bg-accent-amber shrink-0 mt-0.5"></span>
+<div>
+<strong class="text-navy-900 block font-semibold mb-0.5">Karakteristik Kluster Kemiskinan</strong>
+              78% distrik berpendapatan rendah terkonsentrasi di kuadran kanan atas (belanja rokok tinggi &amp; PoU parah).
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BAB 03: PETA CHOROPLETH RASIO KRITIS 1.0 & TOP 10 DEFISIT (Tone 1: Clean White #FFFFFF) -->
+<section class="w-full py-16 md:py-24 bg-white border-b border-slate-border" id="bab-03">
+<div class="max-w-6xl mx-auto px-4 md:px-8">
+<!-- Section Header -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 mb-12">
+<div class="lg:col-span-5">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-slate-100 text-[#0d1c2e] font-mono text-xs font-bold tracking-widest border border-slate-200">
+              BAB 03
+            </div>
+<h2 class="font-serif text-2xl md:text-3xl font-bold text-[#0d1c2e] leading-snug">
+              Peta Wilayah &amp; Garis Batas Kritis Rasio 1.0
+            </h2>
+<div class="w-12 h-1 bg-[#D9381E] rounded-full"></div>
+</div>
+</div>
+<div class="lg:col-span-7 font-sans text-slate-700 leading-relaxed text-base">
+<p class="font-serif text-lg text-navy-900 mb-2">
+            Formulasi Indeks Rasio Pengeluaran Kritis Gizi:
+          </p>
+<div class="bg-slate-100 p-3 rounded-md font-mono text-xs text-navy-950 border border-slate-200 mb-3">
+            Rasio Kritis = Pengeluaran Rokok / (Pengeluaran Daging + Pengeluaran Ikan)
+          </div>
+<p class="text-sm">
+            Ambang batas <strong class="text-[#D9381E] font-bold">Rasio &gt; 1.0</strong> mengindikasikan defisit defisit akut: anggaran yang dibakar menjadi asap rokok lebih besar dibanding belanja gizi pemenuhan sel otak anak. Di kawasan Madura dan Timor, angka ini bahkan melonjak melewati <strong class="text-[#D9381E] font-bold">2.0×</strong>.
+          </p>
+</div>
+</div>
+<!-- Map & Top 10 Deficit Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Interactive Map (8 Cols) -->
+<div class="lg:col-span-8 bg-slate-50 border border-slate-border rounded-xl p-5 md:p-6 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+<span class="font-serif text-lg font-bold text-navy-900">Sebaran Rasio Rokok vs Protein Hewani</span>
+<span class="font-mono text-xs font-bold px-2.5 py-0.5 rounded bg-red-100 text-[#D9381E] border border-red-200">
+                Zona Defisit: 387 Daerah
+              </span>
+</div>
+<!-- Diverging Palette Scale Bar -->
+<div class="space-y-1 mb-4">
+<div class="h-2.5 w-full rounded flex overflow-hidden border border-slate-300">
+<div class="w-1/5 bg-[#0072B2]" title="Aman (&lt; 0.6x)"></div>
+<div class="w-1/5 bg-[#56B4E9]" title="Moderat (0.6x - 0.9x)"></div>
+<div class="w-1/5 bg-[#c4c7c7]" title="Ambang Batas (1.0x)"></div>
+<div class="w-1/5 bg-[#E69F00]" title="Kritis (1.1x - 1.5x)"></div>
+<div class="w-1/5 bg-[#D9381E]" title="Ekstrem (&gt; 1.6x)"></div>
+</div>
+<div class="flex justify-between font-mono text-[10px] text-slate-500 font-bold">
+<span>&lt; 0.6× (Aman)</span>
+<span>0.8×</span>
+<span class="text-navy-900 font-bold">1.0× (Ambang Defisit)</span>
+<span>1.3×</span>
+<span class="text-[#D9381E]">&gt; 1.6× (Kritis Akut)</span>
+</div>
+</div>
+<!-- Map Vector Illustration -->
+<div class="w-full bg-slate-200/50 rounded-lg p-4 my-2 relative overflow-hidden border border-slate-200">
+<svg class="w-full h-[280px] md:h-[320px]" fill="none" viewbox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#F1F5F9" height="480" rx="6" width="1000"></rect>
+<!-- Sumatera (Orange) -->
+<g class="cursor-pointer hover:opacity-85 transition-opacity" onclick="alert('Wilayah Sumatera:\nRata-rata Rasio: 1.42x\nDaerah Terparah: Kab. Asahan (1.78x)');">
+<path d="M120 110 L160 80 L230 160 L280 230 L220 280 L180 220 L130 150 Z" fill="#E69F00" stroke="#ffffff" stroke-width="1.5"></path>
+<circle cx="180" cy="180" fill="#ffffff" r="4"></circle>
+<text fill="#020C1B" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="140" y="195">Sumatera (1.42×)</text>
+</g>
+<!-- Jawa (Red Kritis) -->
+<g class="cursor-pointer hover:opacity-85 transition-opacity" onclick="alert('Pulau Jawa (Episentrum Kretek):\nRata-rata Rasio: 1.64x\nDaerah Terparah: Madura &amp; Pantura\n42% alokasi makanan terserap rokok + beras');">
+<path d="M260 330 L450 335 L520 345 L480 375 L380 370 L260 355 Z" fill="#D9381E" stroke="#ffffff" stroke-width="2"></path>
+<text fill="#7F1D1D" font-family="JetBrains Mono" font-size="12" font-weight="bold" x="330" y="395">Jawa: Episentrum Kritis (1.64×)</text>
+</g>
+<!-- Kalimantan (Amber) -->
+<g class="cursor-pointer hover:opacity-85 transition-opacity" onclick="alert('Kalimantan:\nRata-rata Rasio: 1.15x\nKonsumsi ikan air tawar pesisir menahan rasio.');">
+<path d="M360 140 L450 110 L480 180 L420 250 L340 220 Z" fill="#E69F00" stroke="#ffffff" stroke-width="1.5"></path>
+<text fill="#020C1B" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="380" y="180">Kalimantan (1.15×)</text>
+</g>
+<!-- Sulawesi (Light Blue) -->
+<g class="cursor-pointer hover:opacity-85 transition-opacity" onclick="alert('Sulawesi:\nRata-rata Rasio: 0.94x\nTingginya konsumsi ikan cakalang/bandeng menekan rasio &lt; 1.0x.');">
+<path d="M560 160 L620 140 L600 210 L640 230 L580 280 L550 220 Z" fill="#56B4E9" stroke="#ffffff" stroke-width="1.5"></path>
+<text fill="#082F49" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="585" y="240">Sulawesi (0.94×)</text>
+</g>
+<!-- Nusa Tenggara (Red Kritis) -->
+<g class="cursor-pointer hover:opacity-85 transition-opacity" onclick="alert('Nusa Tenggara (NTT/NTB):\nRata-rata Rasio: 1.58x\nStunting tinggi berbanding lurus dengan pengeluaran tembakau');">
+<path d="M530 365 L600 360 L680 365 L670 380 L540 380 Z" fill="#D9381E" stroke="#ffffff" stroke-width="1.5"></path>
+<text fill="#7F1D1D" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="570" y="405">Nusa Tenggara (1.58×)</text>
+</g>
+<!-- Maluku (Deep Blue Safe) -->
+<g class="cursor-pointer hover:opacity-85 transition-opacity" onclick="alert('Kepulauan Maluku:\nRata-rata Rasio: 0.52x\nKonsumsi ikan laut melimpah ruah (Wilayah Teraman Nasional)');">
+<circle cx="730" cy="200" fill="#0072B2" r="14" stroke="#ffffff" stroke-width="1.5"></circle>
+<circle cx="760" cy="240" fill="#0072B2" r="16" stroke="#ffffff" stroke-width="1.5"></circle>
+<text fill="#0072B2" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="710" y="175">Maluku (0.52× - Aman)</text>
+</g>
+<!-- Papua (Sky Blue) -->
+<g class="cursor-pointer hover:opacity-85 transition-opacity" onclick="alert('Papua:\nRata-rata Rasio: 0.88x\nHarga rokok tinggi akibat logistik diimbangi protein umbi/ternak');">
+<path d="M810 180 L920 170 L950 260 L870 300 L800 240 Z" fill="#56B4E9" stroke="#ffffff" stroke-width="1.5"></path>
+<text fill="#082F49" font-family="JetBrains Mono" font-size="11" font-weight="bold" x="840" y="240">Papua (0.88×)</text>
+</g>
+</svg>
+<div class="absolute bottom-2.5 left-2.5 bg-white/95 px-2.5 py-1 rounded border border-slate-200 text-[11px] font-mono text-slate-700">
+                Klik pulau untuk informasi perincian spasial.
+              </div>
+</div>
+</div>
+<!-- Threshold Slider -->
+<div class="mt-3 p-3 bg-white rounded-lg border border-slate-200 font-mono text-xs">
+<div class="flex justify-between items-center mb-1">
+<span class="text-slate-600 font-semibold">Ambang Batas Rasio Kritis:</span>
+<span class="font-bold text-[#D9381E]" id="slider-label">&gt; 1.0× (387 Daerah Terdampak)</span>
+</div>
+<input class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#D9381E]" max="2.0" min="0.5" oninput="document.getElementById('slider-label').innerText = '&gt; ' + this.value + '× (' + Math.round(511 * (2.05 - this.value)/1.55) + ' Daerah)';" step="0.1" type="range" value="1.0"/>
+</div>
+</div>
+<!-- Right Side: Top 10 Defisit Panel (4 Cols) -->
+<div class="lg:col-span-4 bg-slate-50 border border-slate-border rounded-xl p-5 md:p-6 flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-border">
+<h3 class="font-serif text-lg font-bold text-navy-950">10 Wilayah Paling Kritis</h3>
+<span class="font-mono text-xs font-bold text-[#D9381E]">DEFISIT MAX</span>
+</div>
+<p class="font-sans text-xs text-slate-500 mb-3">
+              Kabupaten dengan rasio tertinggi antara belanja rokok terhadap total belanja daging dan ikan.
+            </p>
+<!-- Leaderboard Items -->
+<div class="space-y-1.5 font-sans">
+<!-- 1 -->
+<div class="p-2 rounded bg-white border border-slate-200/80 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-[#D9381E]">01</span>
+<div>
+<div class="text-xs font-bold text-navy-950">Kab. Sampang</div>
+<div class="font-mono text-[10px] text-slate-400">Jawa Timur • 974k Jiwa</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono text-sm font-bold text-[#D9381E]">2.34×</div>
+<div class="font-mono text-[9px] text-slate-400">R:192k | P:82k</div>
+</div>
+</div>
+<!-- 2 -->
+<div class="p-2 rounded bg-white border border-slate-200/80 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-[#D9381E]">02</span>
+<div>
+<div class="text-xs font-bold text-navy-950">Kab. Pamekasan</div>
+<div class="font-mono text-[10px] text-slate-400">Jawa Timur • 860k Jiwa</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono text-sm font-bold text-[#D9381E]">2.18×</div>
+<div class="font-mono text-[9px] text-slate-400">R:188k | P:86k</div>
+</div>
+</div>
+<!-- 3 -->
+<div class="p-2 rounded bg-white border border-slate-200/80 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-[#D9381E]">03</span>
+<div>
+<div class="text-xs font-bold text-navy-950">Kab. Bangkalan</div>
+<div class="font-mono text-[10px] text-slate-400">Jawa Timur • 1.06M Jiwa</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono text-sm font-bold text-[#D9381E]">2.05×</div>
+<div class="font-mono text-[9px] text-slate-400">R:179k | P:87k</div>
+</div>
+</div>
+<!-- 4 -->
+<div class="p-2 rounded bg-white border border-slate-200/80 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-navy-900">04</span>
+<div>
+<div class="text-xs font-bold text-navy-950">Kab. Probolinggo</div>
+<div class="font-mono text-[10px] text-slate-400">Jawa Timur • 1.15M Jiwa</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono text-sm font-bold text-navy-900">1.94×</div>
+<div class="font-mono text-[9px] text-slate-400">R:172k | P:88k</div>
+</div>
+</div>
+<!-- 5 -->
+<div class="p-2 rounded bg-white border border-slate-200/80 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-navy-900">05</span>
+<div>
+<div class="text-xs font-bold text-navy-950">Kab. TTS (NTT)</div>
+<div class="font-mono text-[10px] text-slate-400">NTT • 470k Jiwa</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono text-sm font-bold text-navy-900">1.89×</div>
+<div class="font-mono text-[9px] text-slate-400">R:182k | P:96k</div>
+</div>
+</div>
+<!-- 6 -->
+<div class="p-2 rounded bg-white border border-slate-200/80 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-mono text-xs font-bold text-navy-900">06</span>
+<div>
+<div class="text-xs font-bold text-navy-950">Kab. Demak</div>
+<div class="font-mono text-[10px] text-slate-400">Jawa Tengah • 1.20M Jiwa</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-mono text-sm font-bold text-navy-900">1.84×</div>
+<div class="font-mono text-[9px] text-slate-400">R:168k | P:91k</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-3 pt-2 border-t border-slate-border text-center font-mono text-[10px] text-slate-400">
+            511 Kabupaten/Kota Otonom Terverifikasi
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- METADATA & APPENDIX REPOSITORY SECTION (Open Science & Download Center) -->
+<section class="w-full py-16 md:py-20 bg-slate-50 border-b border-slate-border" id="appendix-repository">
+<div class="max-w-6xl mx-auto px-4 md:px-8">
+<!-- Section Header -->
+<div class="max-w-3xl mb-10">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-navy-900 text-white font-mono text-xs font-bold tracking-widest mb-3">
+          APPENDIX &amp; OPEN SCIENCE
+        </div>
+<h2 class="font-serif text-2xl md:text-3xl font-bold text-navy-950 leading-snug mb-3">
+          Repositori Data, Kamus Variabel &amp; Integritas Analisis
+        </h2>
+<p class="font-sans text-slate-600 text-sm md:text-base leading-relaxed">
+          Seluruh kalkulasi disintesis dari mikrodata mentah Survei Sosial Ekonomi Nasional (Susenas) Badan Pusat Statistik (2018–2024), disinkronkan dengan indikator Prevalensi Ketidakcukupan Pangan (PoU) Bapanas dan target nasional penurunan stunting.
+        </p>
+</div>
+<!-- Expandable Metadata Panels (Kamus Data 4 Variabel Kunci) -->
+<div class="space-y-3 mb-10">
+<h3 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Kamus Data 4 Variabel Kunci:</h3>
+<!-- Panel 1 -->
+<details class="bg-white border border-slate-border rounded-lg overflow-hidden transition-all group" open="">
+<summary class="p-4 cursor-pointer flex items-center justify-between font-mono text-sm font-bold text-navy-950 hover:bg-slate-50 select-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-navy-800">smoking_rooms</span>
+              1. Rata-rata Pengeluaran Rokok per Kapita Sebulan (IDR)
+            </span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 font-sans text-xs text-slate-600 border-t border-slate-100 leading-relaxed">
+            Mencakup agregasi total belanja untuk rokok kretek filter (SKM), rokok kretek tangan (SKT), rokok putih mesin (SPM), serta tembakau linting (tingwe) yang dikonsumsi seluruh anggota rumah tangga selama sebulan terakhir dibagi jumlah anggota rumah tangga. Menggunakan pembobot <em>weight factor</em> Susenas BPS.
+          </div>
+</details>
+<!-- Panel 2 -->
+<details class="bg-white border border-slate-border rounded-lg overflow-hidden transition-all group">
+<summary class="p-4 cursor-pointer flex items-center justify-between font-mono text-sm font-bold text-navy-950 hover:bg-slate-50 select-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-emerald-700">set_meal</span>
+              2. Pengeluaran Protein Hewani (Daging, Ikan, Telur &amp; Susu) (IDR)
+            </span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 font-sans text-xs text-slate-600 border-t border-slate-100 leading-relaxed">
+            Jumlah pengeluaran moneter untuk komoditas hewani bernilai biologis tinggi: daging sapi, ayam ras/buras, ikan segar laut/air tawar, ikan awetan/asin, udang, telur ayam ras/bebek, dan susu cair/bubuk. Diperhitungkan dalam nilai rupiah konstan 2024.
+          </div>
+</details>
+<!-- Panel 3 -->
+<details class="bg-white border border-slate-border rounded-lg overflow-hidden transition-all group">
+<summary class="p-4 cursor-pointer flex items-center justify-between font-mono text-sm font-bold text-navy-950 hover:bg-slate-50 select-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-accent-amber">balance</span>
+              3. Garis Kemiskinan Makanan &amp; Non-Makanan (GK)
+            </span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 font-sans text-xs text-slate-600 border-t border-slate-100 leading-relaxed">
+            Nilai rupiah pengeluaran minimum yang dibutuhkan seseorang untuk memenuhi kebutuhan pokok minimum makanan (setara 2100 kkal per kapita per hari) dan kebutuhan minimum non-makanan (perumahan, sandang, pendidikan, kesehatan). Rokok secara persisten menyumbang 10–15% terhadap garis kemiskinan BPS.
+          </div>
+</details>
+<!-- Panel 4 -->
+<details class="bg-white border border-slate-border rounded-lg overflow-hidden transition-all group">
+<summary class="p-4 cursor-pointer flex items-center justify-between font-mono text-sm font-bold text-navy-950 hover:bg-slate-50 select-none">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#D9381E]">warning</span>
+              4. Prevalensi Ketidakcukupan Konsumsi Pangan (PoU / Prevalence of Undernourishment)
+            </span>
+<span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 font-sans text-xs text-slate-600 border-t border-slate-100 leading-relaxed">
+            Proporsi populasi dalam persentase (%) yang asupan energi hariannya berada di bawah Kebutuhan Energi Minimum (Minimum Dietary Energy Requirement - MDER). Dihitung menggunakan estimasi distribusi konsumsi kalori per kapita BPS &amp; Badan Pangan Nasional.
+          </div>
+</details>
+</div>
+<!-- Formal Citation Box -->
+<div class="bg-white border border-slate-border p-4 md:p-5 rounded-lg mb-8 font-mono text-xs text-slate-700">
+<div class="font-bold text-navy-950 mb-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+          Kutipan Resmi Dataset &amp; Sumber Penelitian:
+        </div>
+<div class="bg-slate-50 p-2.5 rounded border border-slate-200 select-all text-slate-800">
+          "Badan Pusat Statistik (BPS) - Survei Sosial Ekonomi Nasional (Susenas) 2018-2024: Modul Konsumsi dan Pengeluaran Rumah Tangga per Kabupaten/Kota. Jakarta: Direktorat Statistik Kesejahteraan Rakyat BPS RI."
+        </div>
+</div>
+<!-- Two Primary Action Download Buttons -->
+<div class="bg-navy-950 rounded-xl p-6 md:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-navy-800">
+<div class="space-y-1 text-center md:text-left">
+<h4 class="font-serif text-xl font-bold text-slate-100">Unduh Data Terbuka untuk Replikasi Penelitian</h4>
+<p class="font-sans text-xs text-slate-400">
+            Berkas terstruktur format CSV siap olah dengan R, Python, Stata, maupun Tableau.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0 font-mono text-xs font-bold">
+<!-- Button 1 -->
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded bg-[#64FFDA] hover:bg-[#64FFDA]/90 text-navy-950 transition-colors shadow-md" onclick="alert('Mengunduh berkas: master_data_pengeluaran_kemiskinan_2018_2024.csv (8.4 MB)');">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Unduh Agregat Pengeluaran &amp; Kemiskinan (CSV)</span>
+</button>
+<!-- Button 2 -->
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded bg-navy-800 hover:bg-navy-700 text-slate-100 border border-navy-700 transition-colors" onclick="alert('Mengunduh berkas: master_subkomoditas_long.csv (16.2 MB)');">
+<span class="material-symbols-outlined text-[18px]">dataset</span>
+<span>Unduh Rincian Subkomoditas (CSV)</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ELEGAN AUTHOR PROFILE & ACADEMIC FOOTER (Politeknik Statistika STIS) -->
+<footer class="w-full bg-[#020C1B] text-slate-400 pt-16 pb-12 border-t border-navy-900 font-sans">
+<div class="max-w-4xl mx-auto px-4 md:px-8 text-center space-y-6">
+<!-- STIS Emblem / Brand Node -->
+<div class="flex items-center justify-center gap-2 text-slate-300 font-mono text-xs uppercase tracking-widest">
+<span class="w-2.5 h-2.5 rounded-full bg-[#64FFDA]"></span>
+<span>POLITEKNIK STATISTIKA STIS • JAKARTA</span>
+</div>
+<!-- Student Author Metadata Row -->
+<div class="pt-2">
+<div class="font-serif text-xl sm:text-2xl font-bold text-slate-100 mb-2">
+        Kajian Visualisasi Data &amp; Investigasi Sosial-Ekonomi
+      </div>
+<div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-mono text-xs text-slate-300">
+<span>Dikembangkan oleh: <strong class="text-white">[Nama Mahasiswa]</strong></span>
+<span class="text-slate-600 hidden sm:inline">|</span>
+<span>NIM: <strong class="text-white">[NIM Mahasiswa]</strong></span>
+<span class="text-slate-600 hidden sm:inline">|</span>
+<span>Kelas: <strong class="text-white">[Kelas STIS]</strong></span>
+</div>
+</div>
+<div class="w-24 h-px bg-navy-800 mx-auto"></div>
+<!-- Academic Context Paragraph -->
+<p class="font-sans text-xs text-slate-400 max-w-2xl mx-auto leading-relaxed">
+      Proyek ini disusun untuk memenuhi Ujian Akhir Semester Visualisasi Data dan Informasi, Politeknik Statistika STIS, Tahun Akademik 2025/2026.
+    </p>
+<!-- License & Copyright Notice -->
+<div class="pt-6 border-t border-navy-900/80 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[11px] text-slate-500">
+<span>© 2025–2026 Politeknik Statistika STIS • Laporan Berbasis Sains Terbuka (CC BY-SA 4.0).</span>
+<div class="flex items-center gap-4">
+<span>Prinsip Akurasi Mikro</span>
+<span>BPS Reproducibility</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts for Year Pills & Regression Line Toggle -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Treemap filter year switcher
+    const yearButtons = document.querySelectorAll('.treemap-btn');
+    yearButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        yearButtons.forEach(b => {
+          b.classList.remove('bg-[#0A192F]', 'text-white', 'font-bold');
+          b.classList.add('text-slate-600');
+        });
+        btn.classList.add('bg-[#0A192F]', 'text-white', 'font-bold');
+        btn.classList.remove('text-slate-600');
+      });
+    });
+
+    // Scatter Plot Trendline Toggle
+    const trendlineToggle = document.getElementById('trendline-toggle');
+    const olsLine = document.getElementById('ols-line');
+    if (trendlineToggle && olsLine) {
+      trendlineToggle.addEventListener('change', (e) => {
+        olsLine.style.display = e.target.checked ? 'block' : 'none';
+      });
+    }
+  });
+</script>
+</body></html>
