@@ -4,3 +4,4 @@ plotly
 shapely
 pytest
 numpy
+networkx
