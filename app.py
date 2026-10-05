@@ -1337,7 +1337,6 @@ if d2.empty:
     st.warning("Data scatter plot tidak tersedia untuk parameter yang dipilih.")
 else:
     is_dark2 = (get_active_theme() == "dark")
-    ols_color = "#FF7A00" if is_dark2 else "#000000"
     legend_text_color = "#FFFFFF" if is_dark2 else "#000000"
 
     fig2 = px.scatter(
@@ -1394,12 +1393,11 @@ if not np.isnan(r_val):
 else:
     korelasi_narasi = "Korelasi tidak dapat dihitung (data konstan atau tidak mencukupi)"
 
-ols_color_desc = "oranye terang" if is_dark2 else "hitam"
 st_html(
     f"""
     <div class="editorial-caption">
         <b>Evaluasi Statistik ({tahun2}):</b> Koefisien korelasi Pearson antara pengeluaran rokok dan {ylabel.split(' (')[0].lower()} adalah {korelasi_narasi}. 
-        Garis putus-putus {ols_color_desc} merupakan garis tren kuadrat terkecil (Ordinary Least Squares - OLS). 
+        Ukuran gelembung merepresentasikan proporsi jumlah penduduk masing-masing kabupaten/kota, sedangkan warna mengelompokkan daerah berdasarkan pulau geografis. 
         Perlu ditekankan bahwa signifikansi korelasi tidak serta merta membuktikan hubungan sebab-akibat (kausalitas), 
         melainkan mencerminkan bagaimana beban pengeluaran zat adiktif tetap bertahan di kantong-kantong daerah dengan kerentanan kesejahteraan tinggi.
     </div>
