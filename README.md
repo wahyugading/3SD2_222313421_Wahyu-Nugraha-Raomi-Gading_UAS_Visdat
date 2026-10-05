@@ -1,21 +1,3 @@
----
-{
-  "id": "file_schd91ic",
-  "filetype": "document",
-  "filename": "README",
-  "created_at": "2026-10-05T02:50:36.329Z",
-  "updated_at": "2026-10-05T02:53:23.032Z",
-  "meta":
-    {
-      "location": "/",
-      "tags": [],
-      "categories": [],
-      "description": "",
-      "source": "markdown",
-    },
-}
----
-
 # Rokok-vs-Gizi-Susenas
 
 ### _Ironi Konsumsi Masyarakat: Visualisasi Spasial dan Analisis Teks Pengeluaran Zat Adiktif terhadap Kebutuhan Gizi Menggunakan Mikrodata Susenas_
