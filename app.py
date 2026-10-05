@@ -2003,7 +2003,7 @@ tab_meta, tab_metod, tab_integ, tab_unduh = st.tabs([
 
 with tab_meta:
     st_html('<h4>Daftar Publikasi, Tabel Statistik & Batas Digital Resmi BPS</h4>')
-    st_html('<p class="method-text" style="font-size:0.9rem; margin-bottom:1rem;">Rujukan resmi data BPS (Sesuai Ketentuan Soal Poin 2.b) yang memuat judul publikasi/tabel, tahun rilis data, modul survei, tautan URL resmi portal BPS, dan tanggal aksesibilitas data.</p>')
+    st_html('<p class="method-text" style="font-size:0.9rem; margin-bottom:1rem;">Rujukan resmi data BPS (Sesuai Ketentuan Soal Poin 2.b) yang memuat judul publikasi/tabel, tahun rilis data, modul survei, cakupan wilayah, dan tanggal aksesibilitas data.</p>')
 
     sumber_bps_records = [
         {
@@ -2012,7 +2012,6 @@ with tab_meta:
             "Tahun Data": "2018–2024",
             "Cakupan Wilayah": "511 Kab/Kota",
             "Modul Survei": "Susenas Modul Pengeluaran & Konsumsi",
-            "URL Resmi Akses BPS": "https://www.bps.go.id/id/publication/category/consumption-expenditure",
             "Tanggal Akses": "2 Oktober 2026",
         },
         {
@@ -2021,7 +2020,6 @@ with tab_meta:
             "Tahun Data": "2018–2024",
             "Cakupan Wilayah": "Nasional & Provinsi",
             "Modul Survei": "Rilis Semesteran (Maret & September)",
-            "URL Resmi Akses BPS": "https://www.bps.go.id/id/pressrelease/category/poverty",
             "Tanggal Akses": "3 Oktober 2026",
         },
         {
@@ -2030,7 +2028,6 @@ with tab_meta:
             "Tahun Data": "2018–2024",
             "Cakupan Wilayah": "Nasional & Kab/Kota",
             "Modul Survei": "Susenas Kor & Modul Sosial Budaya",
-            "URL Resmi Akses BPS": "https://www.bps.go.id/id/publication/category/welfare",
             "Tanggal Akses": "3 Oktober 2026",
         },
         {
@@ -2039,7 +2036,6 @@ with tab_meta:
             "Tahun Data": "2018–2024",
             "Cakupan Wilayah": "511 Kab/Kota",
             "Modul Survei": "Tabel Dinamis Statistik Kemiskinan Makro",
-            "URL Resmi Akses BPS": "https://www.bps.go.id/id/statistics-table/2/OTg1IzI=/garis-kemiskinan-menurut-kabupaten-kota.html",
             "Tanggal Akses": "2 Oktober 2026",
         },
         {
@@ -2048,7 +2044,6 @@ with tab_meta:
             "Tahun Data": "2018–2024",
             "Cakupan Wilayah": "511 Kab/Kota",
             "Modul Survei": "BPS & Badan Pangan Nasional (NFA)",
-            "URL Resmi Akses BPS": "https://www.bps.go.id/id/statistics-table/2/MTAzMyMy/prevalensi-ketidakcukupan-konsumsi-pangan.html",
             "Tanggal Akses": "4 Oktober 2026",
         },
         {
@@ -2057,7 +2052,6 @@ with tab_meta:
             "Tahun Data": "2024",
             "Cakupan Wilayah": "511 Poligon Wilayah",
             "Modul Survei": "Sistem Informasi Geografis BPS & Ina-Geoportal",
-            "URL Resmi Akses BPS": "https://gis.bps.go.id/ & https://indonesia-geospatial.com",
             "Tanggal Akses": "4 Oktober 2026",
         },
     ]
